@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Machine Learning with ML Kit and Object Recognition</string>
+    <string name="selected_image_from_camera">Selected image from camera</string>
+    <string name="camera">Camera</string>
+</resources>

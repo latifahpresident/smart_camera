@@ -1,0 +1,2 @@
+rootProject.name = "Machine Learning with ML Kit and Object Recognition"
+include ':app'

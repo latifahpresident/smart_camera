@@ -1,0 +1,195 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3    I keep getting this ERROR: apps targeting Android 12 and higher are required to specify
+4an explicit value for `android:exported` when the corresponding component has an intent filter defined.
+5
+6Fixed with this: https://stackoverflow.com/questions/67654506/manifest-merger-failed-targeting-android-12
+7
+8============================================================================================================================================
+9STEP 1: REQUEST THE CAMERA FEATURE (ASK FOR PERMISSION)
+10STEP 2: CREATE FRAGMENT THAT WILL HANDLE CALLING THE CAMERA
+11-->
+12<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+13    package="com.latifah.machinelearningwithmlkitandobjectrecognition"
+14    android:versionCode="1"
+15    android:versionName="1.0" >
+16
+17    <uses-sdk
+18        android:minSdkVersion="23"
+18-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml
+19        android:targetSdkVersion="31" />
+19-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml
+20    <!-- REQUESTING THE CAMERA -->
+21    <uses-feature
+21-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:15:5-16:35
+22        android:name="android.hardware.camera"
+22-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:15:19-57
+23        android:required="true" />
+23-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:16:9-32
+24
+25    <!-- For allowlist service -->
+26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+26-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:7:5-79
+26-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:7:22-76
+27    <uses-permission android:name="android.permission.INTERNET" />
+27-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:8:5-67
+27-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:8:22-64
+28
+29    <application
+29-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:18:5-33:19
+30        android:allowBackup="true"
+30-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:19:9-35
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.7.0] /Users/latifahpresident/.gradle/caches/transforms-3/6f000dfa16ea065d370741bc95e07247/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+34        android:icon="@mipmap/ic_launcher"
+34-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:20:9-43
+35        android:label="@string/app_name"
+35-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:21:9-41
+36        android:roundIcon="@mipmap/ic_launcher_round"
+36-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:22:9-54
+37        android:supportsRtl="true"
+37-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:23:9-35
+38        android:testOnly="true"
+39        android:theme="@style/Theme.MachineLearningWithMLKitAndObjectRecognition" >
+39-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:24:9-82
+40        <activity
+40-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:26:9-32:20
+41            android:name="com.latifah.machinelearningwithmlkitandobjectrecognition.MainActivity"
+41-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:26:19-47
+42            android:exported="true" >
+42-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:26:48-71
+43            <intent-filter>
+43-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:27:13-31:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:28:17-69
+44-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:28:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:30:17-77
+46-->/Users/latifahpresident/AndroidStudioProjects/MachineLearningwithMLKitandObjectRecognition/app/src/main/AndroidManifest.xml:30:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <service
+50-->[com.google.mlkit:object-detection:16.2.4] /Users/latifahpresident/.gradle/caches/transforms-3/d92fa9012ab4e86efe873130dfedc6a9/transformed/object-detection-16.2.4/AndroidManifest.xml:8:9-14:19
+51            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+51-->[com.google.mlkit:object-detection:16.2.4] /Users/latifahpresident/.gradle/caches/transforms-3/d92fa9012ab4e86efe873130dfedc6a9/transformed/object-detection-16.2.4/AndroidManifest.xml:9:13-91
+52            android:directBootAware="true"
+52-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:17:13-43
+53            android:exported="false" >
+53-->[com.google.mlkit:object-detection:16.2.4] /Users/latifahpresident/.gradle/caches/transforms-3/d92fa9012ab4e86efe873130dfedc6a9/transformed/object-detection-16.2.4/AndroidManifest.xml:10:13-37
+54            <meta-data
+54-->[com.google.mlkit:object-detection:16.2.4] /Users/latifahpresident/.gradle/caches/transforms-3/d92fa9012ab4e86efe873130dfedc6a9/transformed/object-detection-16.2.4/AndroidManifest.xml:11:13-13:85
+55                android:name="com.google.firebase.components:com.google.mlkit.vision.objects.defaults.internal.DefaultObjectsRegistrar"
+55-->[com.google.mlkit:object-detection:16.2.4] /Users/latifahpresident/.gradle/caches/transforms-3/d92fa9012ab4e86efe873130dfedc6a9/transformed/object-detection-16.2.4/AndroidManifest.xml:12:17-136
+56                android:value="com.google.firebase.components.ComponentRegistrar" />
+56-->[com.google.mlkit:object-detection:16.2.4] /Users/latifahpresident/.gradle/caches/transforms-3/d92fa9012ab4e86efe873130dfedc6a9/transformed/object-detection-16.2.4/AndroidManifest.xml:13:17-82
+57            <meta-data
+57-->[com.google.mlkit:image-labeling:17.0.6] /Users/latifahpresident/.gradle/caches/transforms-3/bf6e2365b8c215774ad07cdfdce4103b/transformed/image-labeling-17.0.6/AndroidManifest.xml:11:13-13:85
+58                android:name="com.google.firebase.components:com.google.mlkit.vision.label.defaults.internal.BundledLabelRegistrar"
+58-->[com.google.mlkit:image-labeling:17.0.6] /Users/latifahpresident/.gradle/caches/transforms-3/bf6e2365b8c215774ad07cdfdce4103b/transformed/image-labeling-17.0.6/AndroidManifest.xml:12:17-132
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.mlkit:image-labeling:17.0.6] /Users/latifahpresident/.gradle/caches/transforms-3/bf6e2365b8c215774ad07cdfdce4103b/transformed/image-labeling-17.0.6/AndroidManifest.xml:13:17-82
+60            <meta-data
+60-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:14:13-16:85
+61                android:name="com.google.firebase.components:com.google.mlkit.vision.vkp.VkpRegistrar"
+61-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:15:17-103
+62                android:value="com.google.firebase.components.ComponentRegistrar" />
+62-->[com.google.mlkit:vision-internal-vkp:18.2.1] /Users/latifahpresident/.gradle/caches/transforms-3/99a148c798510bf6203dae78ce2eec16/transformed/vision-internal-vkp-18.2.1/AndroidManifest.xml:16:17-82
+63            <meta-data
+63-->[com.google.mlkit:vision-common:16.7.0] /Users/latifahpresident/.gradle/caches/transforms-3/e089994c9275c01f740544e10c143bbd/transformed/vision-common-16.7.0/AndroidManifest.xml:12:13-14:85
+64                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+64-->[com.google.mlkit:vision-common:16.7.0] /Users/latifahpresident/.gradle/caches/transforms-3/e089994c9275c01f740544e10c143bbd/transformed/vision-common-16.7.0/AndroidManifest.xml:13:17-124
+65                android:value="com.google.firebase.components.ComponentRegistrar" />
+65-->[com.google.mlkit:vision-common:16.7.0] /Users/latifahpresident/.gradle/caches/transforms-3/e089994c9275c01f740544e10c143bbd/transformed/vision-common-16.7.0/AndroidManifest.xml:14:17-82
+66            <meta-data
+66-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:20:13-22:85
+67                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+67-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:21:17-120
+68                android:value="com.google.firebase.components.ComponentRegistrar" />
+68-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:22:17-82
+69        </service>
+70
+71        <provider
+71-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:9:9-13:38
+72            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+72-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:10:13-78
+73            android:authorities="com.latifah.machinelearningwithmlkitandobjectrecognition.mlkitinitprovider"
+73-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:11:13-69
+74            android:exported="false"
+74-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:12:13-37
+75            android:initOrder="99" />
+75-->[com.google.mlkit:common:17.5.0] /Users/latifahpresident/.gradle/caches/transforms-3/b0314b6837c04cbb71fbe82d8fd53f56/transformed/common-17.5.0/AndroidManifest.xml:13:13-35
+76
+77        <activity
+77-->[com.google.android.gms:play-services-base:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/8f66b74ea9a654db5efe0ea7e2b76c09/transformed/play-services-base-17.6.0/AndroidManifest.xml:23:9-26:75
+78            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+78-->[com.google.android.gms:play-services-base:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/8f66b74ea9a654db5efe0ea7e2b76c09/transformed/play-services-base-17.6.0/AndroidManifest.xml:24:13-79
+79            android:exported="false"
+79-->[com.google.android.gms:play-services-base:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/8f66b74ea9a654db5efe0ea7e2b76c09/transformed/play-services-base-17.6.0/AndroidManifest.xml:25:13-37
+80            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+80-->[com.google.android.gms:play-services-base:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/8f66b74ea9a654db5efe0ea7e2b76c09/transformed/play-services-base-17.6.0/AndroidManifest.xml:26:13-72
+81
+82        <meta-data
+82-->[com.google.android.gms:play-services-basement:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/3d672e65c5468dcfbf0f66e706dd7735/transformed/play-services-basement-17.6.0/AndroidManifest.xml:23:9-25:69
+83            android:name="com.google.android.gms.version"
+83-->[com.google.android.gms:play-services-basement:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/3d672e65c5468dcfbf0f66e706dd7735/transformed/play-services-basement-17.6.0/AndroidManifest.xml:24:13-58
+84            android:value="@integer/google_play_services_version" />
+84-->[com.google.android.gms:play-services-basement:17.6.0] /Users/latifahpresident/.gradle/caches/transforms-3/3d672e65c5468dcfbf0f66e706dd7735/transformed/play-services-basement-17.6.0/AndroidManifest.xml:25:13-66
+85
+86        <provider
+86-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+87            android:name="androidx.startup.InitializationProvider"
+87-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:27:13-67
+88            android:authorities="com.latifah.machinelearningwithmlkitandobjectrecognition.androidx-startup"
+88-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:28:13-68
+89            android:exported="false" >
+89-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:29:13-37
+90            <meta-data
+90-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+91                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+91-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+92                android:value="androidx.startup" />
+92-->[androidx.emoji2:emoji2:1.0.0] /Users/latifahpresident/.gradle/caches/transforms-3/b4f3606ba47624dfb7c377aac2d41d79/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+93            <meta-data
+93-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/latifahpresident/.gradle/caches/transforms-3/430bba18332b738c865a80209e7f2797/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+94                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+94-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/latifahpresident/.gradle/caches/transforms-3/430bba18332b738c865a80209e7f2797/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+95                android:value="androidx.startup" />
+95-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/latifahpresident/.gradle/caches/transforms-3/430bba18332b738c865a80209e7f2797/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+96        </provider>
+97
+98        <service
+98-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/latifahpresident/.gradle/caches/transforms-3/3bd3db2c0fa48aa1930f86ab4964f100/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+99            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+99-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/latifahpresident/.gradle/caches/transforms-3/3bd3db2c0fa48aa1930f86ab4964f100/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+100            android:exported="false" >
+100-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/latifahpresident/.gradle/caches/transforms-3/3bd3db2c0fa48aa1930f86ab4964f100/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+101            <meta-data
+101-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/latifahpresident/.gradle/caches/transforms-3/3bd3db2c0fa48aa1930f86ab4964f100/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+102                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+102-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/latifahpresident/.gradle/caches/transforms-3/3bd3db2c0fa48aa1930f86ab4964f100/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+103                android:value="cct" />
+103-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/latifahpresident/.gradle/caches/transforms-3/3bd3db2c0fa48aa1930f86ab4964f100/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+104        </service>
+105        <service
+105-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+106            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+106-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+107            android:exported="false"
+107-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+108            android:permission="android.permission.BIND_JOB_SERVICE" >
+108-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+109        </service>
+110
+111        <receiver
+111-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+112            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+112-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+113            android:exported="false" />
+113-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/latifahpresident/.gradle/caches/transforms-3/57c2b9c820f2523f7886047e283460ce/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+114    </application>
+115
+116</manifest>
